@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="heading">To-Do List 🗒</h2>
+        <input id="ip" class="ipb" type="text" placeholder="Add your task" onclick="clearInput()">
+        <button id="addbutton" class="addbtn" onclick="addTask()"><b>ADD</b></button>
+        
+        <div id="tolist" class="tod"></div>
+    </div>
+
+    <script>
+        function clearInput() {
+            document.getElementById("ip").value = "";
+        }
+
+        function addTask() {
+            const input = document.getElementById("ip").value.trim();
+            if (input === "") {
+                alert("Please enter a task.");
+                return;
+            }
+
+            const row = document.createElement("div");
+            row.classList.add("task-row");
+
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.onclick = function () {
+                taskText.style.textDecoration = checkbox.checked ? "line-through" : "none";
+            };
+
+            const taskText = document.createElement("span");
+            taskText.textContent = input;
+            taskText.style.padding = "0 1rem";
+
+            const deleteButton = document.createElement("button");
+            deleteButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            deleteButton.style.color = "orangered";
+            deleteButton.onclick = function () {
+                row.remove();
+            };
+
+            row.append(checkbox, taskText, deleteButton);
+            document.getElementById("tolist").appendChild(row);
+
+            clearInput();
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(47deg, #3e32a8, #e310c7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 450px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.heading {
+    font-size: 24px;
+    padding-bottom: 15px;
+    color: #333;
+}
+
+.ipb {
+    border-radius: 20px;
+    height: 42px;
+    width: 80%;
+    background-color: rgba(216, 213, 213, 0.91);
+    border: none;
+    padding: 0 10px;
+}
+
+.addbtn {
+    border-radius: 20px;
+    height: 44px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addbtn:hover {
+    background-color: darkred;
+}
+
+.tod {
+    margin-top: 20px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.task-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-row:last-child {
+    border-bottom: none;
+}
+
+.task-row input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.task-row span {
+    flex-grow: 1;
+}
+
+.task-row button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: orangered;
+    font-size: 1.2rem;
+}
